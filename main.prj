@@ -1,0 +1,4 @@
+vhdl work "sub16.vhd"
+vhdl work "add16.vhd"
+vhdl work "alu.vhd"
+vhdl work "main.vhd"

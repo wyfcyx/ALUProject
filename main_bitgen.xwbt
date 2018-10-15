@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Tsinghua\Autumn2018\computer\projects\ALUProject\main.ncd
+OUTFILE=D:\Tsinghua\Autumn2018\computer\projects\ALUProject\main.bit
+FAMILY=Spartan3E
+PART=xc3s1200e-4fg320
+WORKINGDIR=D:\Tsinghua\Autumn2018\computer\projects\ALUProject
+LICENSE=WebPack
+USER_INFO=__0_0_0

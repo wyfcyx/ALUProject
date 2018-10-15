@@ -40,92 +40,57 @@ entity main is
 end main;
 
 architecture Behavioral of main is
-	component add
+	component alu is
 		port (
 			a, b : in std_logic_vector(15 downto 0);
-			c : out std_logic_vector(15 downto 0);
+			op : in std_logic_vector(3 downto 0);
+			res : out std_logic_vector(15 downto 0);
 			z, c, s, o : out std_logic
-		);
+	);
 	end component;
 	
-	component sub
-		port (
-			a, b : in std_logic_vector(15 downto 0);
-			c : out std_logic_vector(15 downto 0);
-			z, c, s, o : out std_logic
-		);
-	end component; 
-		
-	component and16
-		port (
-			a, b : in std_logic_vector(15 downto 0);
-			c : out std_logic_vector(15 downto 0);
-			z : out std_logic
-		);
-	end component;
-	
-	component or16
-		port (
-			a, b : in std_logic_vector(15 downto 0);
-			c : out std_logic_vector(15 downto 0);
-			z : out std_logic
-		);
-	end component;
-	
-	component xor16
-		port (
-			a, b : in std_logic_vector(15 downto 0);
-			c : out std_logic_vector(15 downto 0);
-			z : out std_logic
-		);
-	end component;
-	
-	component not16
-		port (
-			a, b : in std_logic_vector(15 downto 0);
-			c : out std_logic_vector(15 downto 0);
-			z, s : out std_logic
-		);
-	end component;
-	
-	component sll16
-		port (
-			a : in std_logic_vector(15 downto 0);
-			d : in std_logic_vector(3 downto 0);
-			c : out std_logic_vector(15 downto 0);
-			z, c : out std_logic
-		);
-	end component;
-	
-	component srl16_
-		port (
-			a : in std_logic_vector(15 downto 0);
-			d : in std_logic_vector(3 downto 0);
-			c : out std_logic_vector(15 downto 0);
-			z : out std_logic
-		);
-	end component;
-	
-	component sra16
-		port (
-			a : in std_logic_vector(15 downto 0);
-			d : in std_logic_vector(3 downto 0);
-			c : out std_logic_vector(15 downto 0);
-			z : out std_logic
-		);
-	end component;
-	
-	component rol16
-		port (
-			a : in std_logic_vector(15 downto 0);
-			d : in std_logic_vector(3 downto 0);
-			c : out std_logic_vector(15 downto 0);
-			z, c : out std_logic
-		);
-	end component;
-	
+	signal state : std_logic_vector(2 downto 0) := "000";
+	signal a, b : std_logic_vector(15 downto 0) := (others => '0');
+	signal z_tmp, c_tmp, s_tmp, o_tmp : std_logic := '0';
+	signal res_tmp : std_logic_vector(15 downto 0);
+	signal op_tmp : std_logic_vector(3 downto 0) := (others => '0');
 begin
 
-
+	aluRealization : alu port map (
+		a => a,
+		b => b,
+		op => op_tmp,
+		res => res_tmp,
+		z => z_tmp,
+		c => c_tmp,
+		s => s_tmp,
+		o => o_tmp
+	);
+	process (rst, clk)
+	begin
+		if (rst = '0') then
+			state <= "000";
+			output16bits <= (others => '0');
+		elsif (clk'event and clk = '1') then
+			case state is
+				when "000" => 
+					a <= input16bits;
+					state <= "001";
+				when "001" =>
+					b <= input16bits;
+					state <= "010";
+				when "010" =>
+					op_tmp <= input16bits(3 downto 0);
+					state <= "011";
+				when "011" =>
+					output16bits <= res_tmp;
+					state <= "100";
+				when "100" =>
+					output16bits <= z_tmp & c_tmp & s_tmp & o_tmp & "000000000000";
+					state <= "000";
+				when others =>
+			end case;
+		end if;
+	end process;
 end Behavioral;
 

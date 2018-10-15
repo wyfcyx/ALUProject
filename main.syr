@@ -1,0 +1,472 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.24 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
+ 
+--> Reading design: main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "main"
+Output Format                      : NGC
+Target Device                      : xc3s1200e-4-fg320
+
+---- Source Options
+Top Module Name                    : main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/Tsinghua/Autumn2018/computer/projects/ALUProject/add16.vhd" in Library work.
+Architecture behavioral of Entity add16 is up to date.
+Compiling vhdl file "D:/Tsinghua/Autumn2018/computer/projects/ALUProject/sub16.vhd" in Library work.
+Architecture behavioral of Entity sub16 is up to date.
+Compiling vhdl file "D:/Tsinghua/Autumn2018/computer/projects/ALUProject/alu.vhd" in Library work.
+Architecture behavioral of Entity alu is up to date.
+Compiling vhdl file "D:/Tsinghua/Autumn2018/computer/projects/ALUProject/main.vhd" in Library work.
+Entity <main> compiled.
+Entity <main> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <main> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <alu> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <add16> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <sub16> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <main> in library <work> (Architecture <behavioral>).
+Entity <main> analyzed. Unit <main> generated.
+
+Analyzing Entity <alu> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "D:/Tsinghua/Autumn2018/computer/projects/ALUProject/alu.vhd" line 183: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <add16Res>, <zRes>, <cRes>, <sRes>, <oRes>, <sub16Res>
+Entity <alu> analyzed. Unit <alu> generated.
+
+Analyzing Entity <add16> in library <work> (Architecture <behavioral>).
+Entity <add16> analyzed. Unit <add16> generated.
+
+Analyzing Entity <sub16> in library <work> (Architecture <behavioral>).
+Entity <sub16> analyzed. Unit <sub16> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <add16>.
+    Related source file is "D:/Tsinghua/Autumn2018/computer/projects/ALUProject/add16.vhd".
+    Found 16-bit adder for signal <res>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <add16> synthesized.
+
+
+Synthesizing Unit <sub16>.
+    Related source file is "D:/Tsinghua/Autumn2018/computer/projects/ALUProject/sub16.vhd".
+    Found 16-bit subtractor for signal <res>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <sub16> synthesized.
+
+
+Synthesizing Unit <alu>.
+    Related source file is "D:/Tsinghua/Autumn2018/computer/projects/ALUProject/alu.vhd".
+WARNING:Xst:1780 - Signal <zRes<9:2>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <xor16Res> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <srl16_Res> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <sra16Res> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <sll16Res> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <sRes<9:2>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <rol16Res> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <or16Res> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <oRes<9:2>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <not16Res> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <cRes<9:2>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <and16Res> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <alu> synthesized.
+
+
+Synthesizing Unit <main>.
+    Related source file is "D:/Tsinghua/Autumn2018/computer/projects/ALUProject/main.vhd".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit register for signal <output16bits>.
+    Found 16-bit register for signal <a>.
+    Found 16-bit register for signal <b>.
+    Found 4-bit register for signal <op_tmp>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  52 D-type flip-flop(s).
+Unit <main> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 16-bit adder                                          : 1
+ 16-bit subtractor                                     : 1
+# Registers                                            : 4
+ 16-bit register                                       : 3
+ 4-bit register                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:5]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00001
+ 001   | 00010
+ 010   | 00100
+ 011   | 01000
+ 100   | 10000
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 2
+ 16-bit adder                                          : 1
+ 16-bit subtractor                                     : 1
+# Registers                                            : 52
+ Flip-Flops                                            : 52
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <main> ...
+
+Optimizing unit <alu> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 57
+ Flip-Flops                                            : 57
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : main.ngr
+Top Level Output File Name         : main
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 34
+
+Cell Usage :
+# BELS                             : 149
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 47
+#      LUT3                        : 5
+#      LUT4                        : 16
+#      MUXCY                       : 30
+#      MUXF5                       : 16
+#      VCC                         : 1
+#      XORCY                       : 32
+# FlipFlops/Latches                : 57
+#      FDC                         : 20
+#      FDE                         : 36
+#      FDP                         : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 33
+#      IBUF                        : 17
+#      OBUF                        : 16
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-4 
+
+ Number of Slices:                       56  out of   8672     0%  
+ Number of Slice Flip Flops:             57  out of  17344     0%  
+ Number of 4 input LUTs:                 69  out of  17344     0%  
+ Number of IOs:                          34
+ Number of bonded IOBs:                  34  out of    250    13%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 57    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst_inv(rst_inv1_INV_0:O)          | NONE(output16bits_0)   | 21    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 5.799ns (Maximum Frequency: 172.444MHz)
+   Minimum input arrival time before clock: 4.273ns
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.799ns (frequency: 172.444MHz)
+  Total number of paths / destination ports: 949 / 57
+-------------------------------------------------------------------------
+Delay:               5.799ns (Levels of Logic = 19)
+  Source:            a_0 (FF)
+  Destination:       output16bits_15 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: a_0 to output16bits_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.591   0.622  a_0 (a_0)
+     LUT2:I0->O            1   0.704   0.000  aluRealization/add16Realization/Madd_res_lut<0> (aluRealization/add16Realization/Madd_res_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  aluRealization/add16Realization/Madd_res_cy<0> (aluRealization/add16Realization/Madd_res_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<1> (aluRealization/add16Realization/Madd_res_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<2> (aluRealization/add16Realization/Madd_res_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<3> (aluRealization/add16Realization/Madd_res_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<4> (aluRealization/add16Realization/Madd_res_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<5> (aluRealization/add16Realization/Madd_res_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<6> (aluRealization/add16Realization/Madd_res_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<7> (aluRealization/add16Realization/Madd_res_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<8> (aluRealization/add16Realization/Madd_res_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<9> (aluRealization/add16Realization/Madd_res_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<10> (aluRealization/add16Realization/Madd_res_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<11> (aluRealization/add16Realization/Madd_res_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<12> (aluRealization/add16Realization/Madd_res_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<13> (aluRealization/add16Realization/Madd_res_cy<13>)
+     MUXCY:CI->O           0   0.059   0.000  aluRealization/add16Realization/Madd_res_cy<14> (aluRealization/add16Realization/Madd_res_cy<14>)
+     XORCY:CI->O           1   0.804   0.455  aluRealization/add16Realization/Madd_res_xor<15> (aluRealization/add16Res<15>)
+     LUT4:I2->O            1   0.704   0.000  output16bits_mux0000<15>1 (output16bits_mux0000<15>1)
+     MUXF5:I1->O           1   0.321   0.000  output16bits_mux0000<15>_f5 (output16bits_mux0000<15>)
+     FDC:D                     0.308          output16bits_15
+    ----------------------------------------
+    Total                      5.799ns (4.722ns logic, 1.077ns route)
+                                       (81.4% logic, 18.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 72 / 72
+-------------------------------------------------------------------------
+Offset:              4.273ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       a_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to a_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.762  rst_IBUF (rst_IBUF)
+     LUT2:I0->O           16   0.704   1.034  b_and00001 (b_and0000)
+     FDE:CE                    0.555          b_0
+    ----------------------------------------
+    Total                      4.273ns (2.477ns logic, 1.796ns route)
+                                       (58.0% logic, 42.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            output16bits_15 (FF)
+  Destination:       output16bits<15> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: output16bits_15 to output16bits<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.591   0.447  output16bits_15 (output16bits_15)
+     OBUF:I->O                 3.272          output16bits_15_OBUF (output16bits<15>)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.01 secs
+ 
+--> 
+
+Total memory usage is 4551384 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   13 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
