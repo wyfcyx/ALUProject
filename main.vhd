@@ -54,8 +54,76 @@ architecture Behavioral of main is
 			c : out std_logic_vector(15 downto 0);
 			z, c, s, o : out std_logic
 		);
-	end component;
+	end component; 
 		
+	component and16
+		port (
+			a, b : in std_logic_vector(15 downto 0);
+			c : out std_logic_vector(15 downto 0);
+			z : out std_logic
+		);
+	end component;
+	
+	component or16
+		port (
+			a, b : in std_logic_vector(15 downto 0);
+			c : out std_logic_vector(15 downto 0);
+			z : out std_logic
+		);
+	end component;
+	
+	component xor16
+		port (
+			a, b : in std_logic_vector(15 downto 0);
+			c : out std_logic_vector(15 downto 0);
+			z : out std_logic
+		);
+	end component;
+	
+	component not16
+		port (
+			a, b : in std_logic_vector(15 downto 0);
+			c : out std_logic_vector(15 downto 0);
+			z, s : out std_logic
+		);
+	end component;
+	
+	component sll16
+		port (
+			a : in std_logic_vector(15 downto 0);
+			d : in std_logic_vector(3 downto 0);
+			c : out std_logic_vector(15 downto 0);
+			z, c : out std_logic
+		);
+	end component;
+	
+	component srl16_
+		port (
+			a : in std_logic_vector(15 downto 0);
+			d : in std_logic_vector(3 downto 0);
+			c : out std_logic_vector(15 downto 0);
+			z : out std_logic
+		);
+	end component;
+	
+	component sra16
+		port (
+			a : in std_logic_vector(15 downto 0);
+			d : in std_logic_vector(3 downto 0);
+			c : out std_logic_vector(15 downto 0);
+			z : out std_logic
+		);
+	end component;
+	
+	component rol16
+		port (
+			a : in std_logic_vector(15 downto 0);
+			d : in std_logic_vector(3 downto 0);
+			c : out std_logic_vector(15 downto 0);
+			z, c : out std_logic
+		);
+	end component;
+	
 begin
 
 
