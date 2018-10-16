@@ -45,23 +45,23 @@ Setup/Hold to clock clk
                |Max Setup to|Max Hold to |                  | Clock  |
 Source         | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ---------------+------------+------------+------------------+--------+
-input16bits<0> |    1.622(R)|    0.378(R)|clk_BUFGP         |   0.000|
-input16bits<1> |    2.094(R)|    0.294(R)|clk_BUFGP         |   0.000|
-input16bits<2> |    2.440(R)|   -0.269(R)|clk_BUFGP         |   0.000|
-input16bits<3> |    2.892(R)|   -0.400(R)|clk_BUFGP         |   0.000|
-input16bits<4> |    1.583(R)|   -0.046(R)|clk_BUFGP         |   0.000|
-input16bits<5> |    2.267(R)|   -0.592(R)|clk_BUFGP         |   0.000|
-input16bits<6> |    1.842(R)|   -0.252(R)|clk_BUFGP         |   0.000|
-input16bits<7> |    2.287(R)|   -0.607(R)|clk_BUFGP         |   0.000|
-input16bits<8> |    3.298(R)|   -1.204(R)|clk_BUFGP         |   0.000|
-input16bits<9> |    2.917(R)|   -0.620(R)|clk_BUFGP         |   0.000|
-input16bits<10>|    2.903(R)|   -0.862(R)|clk_BUFGP         |   0.000|
-input16bits<11>|    2.045(R)|   -0.410(R)|clk_BUFGP         |   0.000|
-input16bits<12>|    1.699(R)|   -0.084(R)|clk_BUFGP         |   0.000|
-input16bits<13>|    1.599(R)|    0.456(R)|clk_BUFGP         |   0.000|
-input16bits<14>|    1.744(R)|    0.089(R)|clk_BUFGP         |   0.000|
-input16bits<15>|    2.078(R)|   -0.033(R)|clk_BUFGP         |   0.000|
-rst            |    5.696(R)|   -1.361(R)|clk_BUFGP         |   0.000|
+input16bits<0> |    1.929(R)|    0.121(R)|clk_BUFGP         |   0.000|
+input16bits<1> |    2.375(R)|    0.188(R)|clk_BUFGP         |   0.000|
+input16bits<2> |    2.207(R)|   -0.098(R)|clk_BUFGP         |   0.000|
+input16bits<3> |    2.078(R)|   -0.178(R)|clk_BUFGP         |   0.000|
+input16bits<4> |    2.360(R)|    0.010(R)|clk_BUFGP         |   0.000|
+input16bits<5> |    1.828(R)|   -0.236(R)|clk_BUFGP         |   0.000|
+input16bits<6> |    1.974(R)|   -0.135(R)|clk_BUFGP         |   0.000|
+input16bits<7> |    1.714(R)|    0.101(R)|clk_BUFGP         |   0.000|
+input16bits<8> |    1.922(R)|   -0.310(R)|clk_BUFGP         |   0.000|
+input16bits<9> |    1.444(R)|    0.073(R)|clk_BUFGP         |   0.000|
+input16bits<10>|    0.983(R)|    0.446(R)|clk_BUFGP         |   0.000|
+input16bits<11>|    1.221(R)|    0.651(R)|clk_BUFGP         |   0.000|
+input16bits<12>|    1.921(R)|    0.551(R)|clk_BUFGP         |   0.000|
+input16bits<13>|    1.090(R)|    0.673(R)|clk_BUFGP         |   0.000|
+input16bits<14>|    0.858(R)|    0.540(R)|clk_BUFGP         |   0.000|
+input16bits<15>|    0.868(R)|    0.533(R)|clk_BUFGP         |   0.000|
+rst            |    4.300(R)|   -0.681(R)|clk_BUFGP         |   0.000|
 ---------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -69,22 +69,22 @@ Clock clk to Pad
                 | clk (edge) |                  | Clock  |
 Destination     |   to PAD   |Internal Clock(s) | Phase  |
 ----------------+------------+------------------+--------+
-output16bits<0> |   10.793(R)|clk_BUFGP         |   0.000|
-output16bits<1> |   10.754(R)|clk_BUFGP         |   0.000|
-output16bits<2> |   10.475(R)|clk_BUFGP         |   0.000|
-output16bits<3> |   10.459(R)|clk_BUFGP         |   0.000|
-output16bits<4> |   10.522(R)|clk_BUFGP         |   0.000|
-output16bits<5> |   10.194(R)|clk_BUFGP         |   0.000|
-output16bits<6> |   10.294(R)|clk_BUFGP         |   0.000|
-output16bits<7> |   10.485(R)|clk_BUFGP         |   0.000|
-output16bits<8> |   11.178(R)|clk_BUFGP         |   0.000|
-output16bits<9> |   10.725(R)|clk_BUFGP         |   0.000|
-output16bits<10>|   10.866(R)|clk_BUFGP         |   0.000|
-output16bits<11>|   10.735(R)|clk_BUFGP         |   0.000|
-output16bits<12>|   10.587(R)|clk_BUFGP         |   0.000|
-output16bits<13>|   10.601(R)|clk_BUFGP         |   0.000|
-output16bits<14>|   11.561(R)|clk_BUFGP         |   0.000|
-output16bits<15>|   10.652(R)|clk_BUFGP         |   0.000|
+output16bits<0> |   10.284(R)|clk_BUFGP         |   0.000|
+output16bits<1> |    9.985(R)|clk_BUFGP         |   0.000|
+output16bits<2> |   10.231(R)|clk_BUFGP         |   0.000|
+output16bits<3> |    9.881(R)|clk_BUFGP         |   0.000|
+output16bits<4> |   10.318(R)|clk_BUFGP         |   0.000|
+output16bits<5> |   10.214(R)|clk_BUFGP         |   0.000|
+output16bits<6> |   10.383(R)|clk_BUFGP         |   0.000|
+output16bits<7> |   10.554(R)|clk_BUFGP         |   0.000|
+output16bits<8> |   10.860(R)|clk_BUFGP         |   0.000|
+output16bits<9> |   10.556(R)|clk_BUFGP         |   0.000|
+output16bits<10>|   10.895(R)|clk_BUFGP         |   0.000|
+output16bits<11>|   10.517(R)|clk_BUFGP         |   0.000|
+output16bits<12>|   10.884(R)|clk_BUFGP         |   0.000|
+output16bits<13>|   10.771(R)|clk_BUFGP         |   0.000|
+output16bits<14>|   11.152(R)|clk_BUFGP         |   0.000|
+output16bits<15>|   10.904(R)|clk_BUFGP         |   0.000|
 ----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -92,18 +92,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.607|         |         |         |
+clk            |    8.933|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon Oct 15 22:52:31 2018 
+Analysis completed Tue Oct 16 14:25:13 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4531 MB
+Peak Memory Usage: 4532 MB
 
 
 

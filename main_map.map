@@ -9,7 +9,7 @@ Target Device  : xc3s1200e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Mon Oct 15 22:51:56 2018
+Mapped Date    : Tue Oct 16 14:24:33 2018
 
 Mapping design into LUTs...
 Running directed packing...
@@ -25,17 +25,23 @@ Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
   Number of Slice Flip Flops:            57 out of  17,344    1%
-  Number of 4 input LUTs:                68 out of  17,344    1%
+  Number of 4 input LUTs:               178 out of  17,344    1%
 Logic Distribution:
-  Number of occupied Slices:             56 out of   8,672    1%
-    Number of Slices containing only related logic:      56 out of      56 100%
-    Number of Slices containing unrelated logic:          0 out of      56   0%
+  Number of occupied Slices:            112 out of   8,672    1%
+    Number of Slices containing only related logic:     112 out of     112 100%
+    Number of Slices containing unrelated logic:          0 out of     112   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:          68 out of  17,344    1%
+  Total Number of 4 input LUTs:         179 out of  17,344    1%
+    Number used as logic:               178
+    Number used as a route-thru:          1
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
   Number of bonded IOBs:                 34 out of     250   13%
   Number of BUFGMUXs:                     1 out of      24    4%
 
-Average Fanout of Non-Clock Nets:                2.56
+Average Fanout of Non-Clock Nets:                2.74
 
 Peak Memory Usage:  4454 MB
 Total REAL time to MAP completion:  3 secs 

@@ -28,39 +28,39 @@ architecture Behavioral of alu is
 			z, c, s, o : out std_logic
 		);
 	end component;
---
---	component and16
---		port (
---			a, b : in std_logic_vector(15 downto 0);
---			res : out std_logic_vector(15 downto 0);
---			z : out std_logic
---		);
---	end component;
---
---	component or16
---		port (
---			a, b : in std_logic_vector(15 downto 0);
---			res : out std_logic_vector(15 downto 0);
---			z : out std_logic
---		);
---	end component;
---
---	component xor16
---		port (
---			a, b : in std_logic_vector(15 downto 0);
---			res : out std_logic_vector(15 downto 0);
---			z : out std_logic
---		);
---	end component;
---
---	component not16
---		port (
---			a, b : in std_logic_vector(15 downto 0);
---			res : out std_logic_vector(15 downto 0);
---			z, s : out std_logic
---		);
---	end component;
---
+
+	component and16
+		port (
+			a, b : in std_logic_vector(15 downto 0);
+			res : out std_logic_vector(15 downto 0);
+			z : out std_logic
+		);
+	end component;
+
+	component or16
+		port (
+			a, b : in std_logic_vector(15 downto 0);
+			res : out std_logic_vector(15 downto 0);
+			z : out std_logic
+		);
+	end component;
+
+	component xor16
+		port (
+			a, b : in std_logic_vector(15 downto 0);
+			res : out std_logic_vector(15 downto 0);
+			z : out std_logic
+		);
+	end component;
+
+	component not16
+		port (
+			a : in std_logic_vector(15 downto 0);
+			res : out std_logic_vector(15 downto 0);
+			z, s : out std_logic
+		);
+	end component;
+
 --	component sll16
 --		port (
 --			a : in std_logic_vector(15 downto 0);
@@ -121,35 +121,34 @@ begin
 		o => oRes(1)
 	);
 		
---	and16Realization : and16 port map (
---		a => a,
---		b => b,
---		res => and16Res,
---		z => zRes(2)
---	);
---	
---	or16Realization : or16 port map (
---		a => a,
---		b => b,
---		res => or16Res,
---		z => zRes(3)
---	);
---	
---	xor16Realization : xor16 port map (
---		a => a,
---		b => b,
---		res => xor16Res,
---		z => zRes(4)
---	);
---	
---	not16Realization : not16 port map (
---		a => a,
---		b => b,
---		res => not16Res,
---		z => zRes(5),
---		s => sRes(5)
---	);
---	
+	and16Realization : and16 port map (
+		a => a,
+		b => b,
+		res => and16Res,
+		z => zRes(2)
+	);
+	
+	or16Realization : or16 port map (
+		a => a,
+		b => b,
+		res => or16Res,
+		z => zRes(3)
+	);
+	
+	xor16Realization : xor16 port map (
+		a => a,
+		b => b,
+		res => xor16Res,
+		z => zRes(4)
+	);
+	
+	not16Realization : not16 port map (
+		a => a,
+		res => not16Res,
+		z => zRes(5),
+		s => sRes(5)
+	);
+	
 --	sll16Realization : sll16 port map (
 --		a => a,
 --		d => b(3 downto 0),
@@ -185,7 +184,6 @@ begin
 		case op is
 			when "0000" =>
 				res <= add16Res;
-				--res <= "1010101010101010";
 				z <= zRes(0);
 				c <= cRes(0);
 				s <= sRes(0);
@@ -196,30 +194,30 @@ begin
 				c <= cRes(1);
 				s <= sRes(1);
 				o <= oRes(1);
---			when "0010" =>
---				res <= and16Res;
---				z <= zRes(2);
---				c <= '0';
---				s <= '0';
---				o <= '0';
---			when "0011" =>
---				res <= or16Res;
---				z <= zRes(3);
---				c <= '0';
---				s <= '0';
---				o <= '0';
---			when "0100" =>
---				res <= xor16Res;
---				z <= zRes(4);
---				c <= '0';
---				s <= '0';
---				o <= '0';
---			when "0101" =>
---				res <= not16Res;
---				z <= zRes(5);
---				c <= '0';
---				s <= sRes(5);
---				o <= '0';
+			when "0010" =>
+				res <= and16Res;
+				z <= zRes(2);
+				c <= '0';
+				s <= '0';
+				o <= '0';
+			when "0011" =>
+				res <= or16Res;
+				z <= zRes(3);
+				c <= '0';
+				s <= '0';
+				o <= '0';
+			when "0100" =>
+				res <= xor16Res;
+				z <= zRes(4);
+				c <= '0';
+				s <= '0';
+				o <= '0';
+			when "0101" =>
+				res <= not16Res;
+				z <= zRes(5);
+				c <= '0';
+				s <= sRes(5);
+				o <= '0';
 --			when "0110" =>
 --				res <= sll16Res;
 --				z <= zRes(6);

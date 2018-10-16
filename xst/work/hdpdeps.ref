@@ -1,33 +1,65 @@
-V3 15
-FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/add16.vhd 2018/10/15.20:47:57 P.20131013
-EN work/add16 1539615094 \
+V3 31
+FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/add16.vhd 2018/10/16.14:14:20 P.20131013
+EN work/add16 1539671050 \
       FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/add16.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/add16/Behavioral 1539615095 \
+AR work/add16/Behavioral 1539671051 \
       FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/add16.vhd \
-      EN work/add16 1539615094
-FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/alu.vhd 2018/10/15.22:46:36 P.20131013
-EN work/alu 1539615098 \
+      EN work/add16 1539671050
+FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/alu.vhd 2018/10/16.14:23:54 P.20131013
+EN work/alu 1539671062 \
       FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/alu.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/alu/Behavioral 1539615099 \
-      FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/alu.vhd EN work/alu 1539615098 \
-      CP add16 CP sub16
-FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/main.vhd 2018/10/15.22:51:24 P.20131013
-EN work/main 1539615100 \
+AR work/alu/Behavioral 1539671063 \
+      FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/alu.vhd EN work/alu 1539671062 \
+      CP add16 CP sub16 CP and16 CP or16 CP xor16 CP not16
+FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/and16.vhd 2018/10/16.13:39:46 P.20131013
+EN work/and16 1539671054 \
+      FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/and16.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/and16/Behavioral 1539671055 \
+      FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/and16.vhd \
+      EN work/and16 1539671054
+FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/main.vhd 2018/10/16.13:40:45 P.20131013
+EN work/main 1539671064 \
       FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/main.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/main/Behavioral 1539615101 \
+AR work/main/Behavioral 1539671065 \
       FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/main.vhd \
-      EN work/main 1539615100 CP alu
-FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/sub16.vhd 2018/10/15.20:49:43 P.20131013
-EN work/sub16 1539615096 \
+      EN work/main 1539671064 CP alu
+FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/not16.vhd 2018/10/16.13:39:32 P.20131013
+EN work/not16 1539671060 \
+      FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/not16.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/not16/Behavioral 1539671061 \
+      FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/not16.vhd \
+      EN work/not16 1539671060
+FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/or16.vhd 2018/10/16.13:39:32 P.20131013
+EN work/or16 1539671056 \
+      FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/or16.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/or16/Behavioral 1539671057 \
+      FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/or16.vhd \
+      EN work/or16 1539671056
+FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/sub16.vhd 2018/10/16.14:07:31 P.20131013
+EN work/sub16 1539671052 \
       FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/sub16.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/sub16/Behavioral 1539615097 \
+AR work/sub16/Behavioral 1539671053 \
       FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/sub16.vhd \
-      EN work/sub16 1539615096
+      EN work/sub16 1539671052 CP add16
+FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/xor16.vhd 2018/10/16.13:39:32 P.20131013
+EN work/xor16 1539671058 \
+      FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/xor16.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/xor16/Behavioral 1539671059 \
+      FL D:/Tsinghua/Autumn2018/computer/projects/ALUProject/xor16.vhd \
+      EN work/xor16 1539671058
