@@ -81,13 +81,12 @@ begin
 					state <= "010";
 				when "010" =>
 					op_tmp <= input16bits(3 downto 0);
+					output16bits <= res_tmp;
 					state <= "011";
 				when "011" =>
-					output16bits <= res_tmp;
-					state <= "100";
-				when "100" =>
 					output16bits <= z_tmp & c_tmp & s_tmp & o_tmp & "000000000000";
 					state <= "000";
+				
 				when others =>
 			end case;
 		end if;

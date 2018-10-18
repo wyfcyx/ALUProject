@@ -1,8 +1,0 @@
-vhdl work "add16.vhd"
-vhdl work "xor16.vhd"
-vhdl work "sub16.vhd"
-vhdl work "or16.vhd"
-vhdl work "not16.vhd"
-vhdl work "and16.vhd"
-vhdl work "alu.vhd"
-vhdl work "main.vhd"

@@ -61,45 +61,45 @@ architecture Behavioral of alu is
 		);
 	end component;
 
---	component sll16
---		port (
---			a : in std_logic_vector(15 downto 0);
---			d : in std_logic_vector(3 downto 0);
---			res : out std_logic_vector(15 downto 0);
---			z, c : out std_logic
---		);
---	end component;
---
---	component srl16_
---		port (
---			a : in std_logic_vector(15 downto 0);
---			d : in std_logic_vector(3 downto 0);
---			res : out std_logic_vector(15 downto 0);
---			z : out std_logic
---		);
---	end component;
---
---	component sra16
---		port (
---			a : in std_logic_vector(15 downto 0);
---			d : in std_logic_vector(3 downto 0);
---			res : out std_logic_vector(15 downto 0);
---			z : out std_logic
---		);
---	end component;
---
---	component rol16
---		port (
---			a : in std_logic_vector(15 downto 0);
---			d : in std_logic_vector(3 downto 0);
---			res : out std_logic_vector(15 downto 0);
---			z, c : out std_logic
---		);
---	end component;
+	component sll16
+		port (
+			a : in std_logic_vector(15 downto 0);
+			d : in std_logic_vector(3 downto 0);
+			res : out std_logic_vector(15 downto 0);
+			z, c : out std_logic
+		);
+	end component;
+
+	component srl16m
+		port (
+			a : in std_logic_vector(15 downto 0);
+			d : in std_logic_vector(3 downto 0);
+			res : out std_logic_vector(15 downto 0);
+			z : out std_logic
+		);
+	end component;
+
+	component sra16
+		port (
+			a : in std_logic_vector(15 downto 0);
+			d : in std_logic_vector(3 downto 0);
+			res : out std_logic_vector(15 downto 0);
+			z : out std_logic
+		);
+	end component;
+
+	component rol16
+		port (
+			a : in std_logic_vector(15 downto 0);
+			d : in std_logic_vector(3 downto 0);
+			res : out std_logic_vector(15 downto 0);
+			z, c : out std_logic
+		);
+	end component;
 	signal zRes, cRes, sRes, oRes : std_logic_vector(9 downto 0);
 	signal add16Res, sub16Res : std_logic_vector(15 downto 0);
 	signal and16Res, or16Res, xor16Res, not16Res : std_logic_vector(15 downto 0);
-	signal sll16Res, srl16_Res, sra16Res, rol16Res : std_logic_vector(15 downto 0);
+	signal sll16Res, srl16mRes, sra16Res, rol16Res : std_logic_vector(15 downto 0);
 begin
 	add16Realization : add16 port map (
 		a => a,
@@ -149,35 +149,35 @@ begin
 		s => sRes(5)
 	);
 	
---	sll16Realization : sll16 port map (
---		a => a,
---		d => b(3 downto 0),
---		res => sll16Res,
---		z => zRes(6),
---		c => cRes(6)
---	);
---	
---	srl16_Realization : srl16_ port map (
---		a => a,
---		d => b(3 downto 0),
---		res => srl16_Res,
---		z => zRes(7)
---	);
---	
---	sra16Realization : sra16 port map (
---		a => a,
---		d => b(3 downto 0),
---		res => sra16Res,
---		z => zRes(8)
---	);
---	
---	rol16Realization : rol16 port map (
---		a => a,
---		d => b(3 downto 0),
---		res => rol16Res,
---		z => zRes(9),
---		c => cRes(9)
---	);
+	sll16Realization : sll16 port map (
+		a => a,
+		d => b(3 downto 0),
+		res => sll16Res,
+		z => zRes(6),
+		c => cRes(6)
+	);
+	
+	srl16mRealization : srl16m port map (
+		a => a,
+		d => b(3 downto 0),
+		res => srl16mRes,
+		z => zRes(7)
+	);
+	
+	sra16Realization : sra16 port map (
+		a => a,
+		d => b(3 downto 0),
+		res => sra16Res,
+		z => zRes(8)
+	);
+	
+	rol16Realization : rol16 port map (
+		a => a,
+		d => b(3 downto 0),
+		res => rol16Res,
+		z => zRes(9),
+		c => cRes(9)
+	);
 	
 	process (op)
 	begin
@@ -218,30 +218,30 @@ begin
 				c <= '0';
 				s <= sRes(5);
 				o <= '0';
---			when "0110" =>
---				res <= sll16Res;
---				z <= zRes(6);
---				c <= cRes(6);
---				s <= '0';
---				o <= '0';
---			when "0111" =>
---				res <= srl16_Res;
---				z <= zRes(7);
---				c <= '0';
---				s <= '0';
---				o <= '0';
---			when "1000" =>
---				res <= sra16Res;
---				z <= zRes(8);
---				c <= '0';
---				s <= '0';
---				o <= '0';
---			when "1001" =>
---				res <= rol16Res;
---				z <= zRes(9);
---				c <= cRes(9);
---				s <= '0';
---				o <= '0';
+			when "0110" =>
+				res <= sll16Res;
+				z <= zRes(6);
+				c <= cRes(6);
+				s <= '0';
+				o <= '0';
+			when "0111" =>
+				res <= srl16mRes;
+				z <= zRes(7);
+				c <= '0';
+				s <= '0';
+				o <= '0';
+			when "1000" =>
+				res <= sra16Res;
+				z <= zRes(8);
+				c <= '0';
+				s <= '0';
+				o <= '0';
+			when "1001" =>
+				res <= rol16Res;
+				z <= zRes(9);
+				c <= cRes(9);
+				s <= '0';
+				o <= '0';
 			when others =>
 				res <= (others => '1');
 				z <= '1';
